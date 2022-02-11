@@ -93,7 +93,12 @@ possible words.
 <img src="man/figures/00.png" />
 
 ``` r
-helper <- WordleHelper$new(nchar = 5)
+
+helper <- wordle::WordleHelper$new(nchar = 5)
+helper$update("adieu", c('grey', 'grey', 'grey', 'yellow', 'green'))
+helper$words
+
+
 length(helper$words)
 #> [1] 12972
 head(helper$words)
@@ -109,7 +114,8 @@ There are many opinions on a good starting word - I like: `arose`
 Update puzzle state with the word played and the response:
 
 ``` r
-helper$update("arose", c('grey', 'grey', 'grey', 'yellow', 'green'))
+helper$update("audio", c('grey', 'grey', 'grey', 'grey', 'grey'))
+helper$update("adieu", c('grey', 'grey', 'grey', 'yellow', 'green'))
 helper$words
 #>  [1] "besee" "disme" "ensue" "esile" "fusee" "geste" "gusle" "issue" "istle"
 #> [10] "lisle" "mesne" "piste" "pusle" "scene" "scute" "sedge" "segue" "seine"
